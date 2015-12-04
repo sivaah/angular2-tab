@@ -9,6 +9,17 @@ The generated project has dependencies that require Node 4 or greater.
 2. systemjs >= 0.19.2
 3. bootstrap
 
+##Installation
+Download the files and from the root run
+
+`
+npm install
+`
+## Usage
+`
+npm start
+`
+
 ##Features
 1. Creates tab for each component configured.
 2. Automatically changes the route when clicking on the tab.
