@@ -39,8 +39,15 @@ export class Tabs {
 
 export class Tab {
 	active = this.active || false;
+	path: string;
+	private _requestPath: string;
 	
-	constructor(tabs: Tabs) {
+	constructor(tabs: Tabs, location: Location) {
+		this._requestPath = location.path();
 		tabs.addTab(this);	
+	}
+	
+	onInit() {
+		this.active = this._requestPath === this.path;	
 	}
 }

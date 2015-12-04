@@ -35,10 +35,14 @@ var Tabs = (function () {
 })();
 exports.Tabs = Tabs;
 var Tab = (function () {
-    function Tab(tabs) {
+    function Tab(tabs, location) {
         this.active = this.active || false;
+        this._requestPath = location.path();
         tabs.addTab(this);
     }
+    Tab.prototype.onInit = function () {
+        this.active = this._requestPath === this.path;
+    };
     Tab = __decorate([
         angular2_1.Directive({
             selector: 'tab',
@@ -48,7 +52,7 @@ var Tab = (function () {
                 'active'
             ]
         }), 
-        __metadata('design:paramtypes', [Tabs])
+        __metadata('design:paramtypes', [Tabs, router_1.Location])
     ], Tab);
     return Tab;
 })();

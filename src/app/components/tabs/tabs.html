@@ -1,5 +1,5 @@
 <ul class="nav nav-tabs" role="tablist">
-	<li *ng-for="#tab of tabs" role="presentation" [class.active]="tab.active || path == tab.path" (click)="selectTab(tab)">
+	<li *ng-for="#tab of tabs" role="presentation" [class.active]="tab.active" (click)="selectTab(tab)">
 		<a [router-link]="[tab.path]">{{tab.tabTitle}}</a>
 	</li>
 </ul>
