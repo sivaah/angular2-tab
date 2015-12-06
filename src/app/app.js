@@ -10,6 +10,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var angular2_1 = require("angular2/angular2");
 var router_1 = require("angular2/router");
 var tabs_1 = require("./components/tabs/tabs");
+var stabs_1 = require("./components/stabs/stabs");
 var Tab1 = (function () {
     function Tab1() {
     }
@@ -38,8 +39,8 @@ var AppComponent = (function () {
     AppComponent = __decorate([
         angular2_1.Component({
             selector: 'my-app',
-            template: "\n\t\t<tabs>\n\t\t\t<tab tab-title=\"Tab 1\" path=\"/Tab1\" />\n\t\t\t<tab tab-title=\"Tab 2\" path=\"/Tab2\" />\n\t\t</tabs>\n\t",
-            directives: [tabs_1.Tabs, tabs_1.Tab]
+            templateUrl: 'app/app.html',
+            directives: [tabs_1.Tabs, tabs_1.Tab, stabs_1.Stabs, stabs_1.Stab]
         }),
         router_1.RouteConfig([
             { path: "/", component: Tab1, as: "Tab1" },

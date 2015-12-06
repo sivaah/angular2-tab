@@ -1,6 +1,7 @@
 import {bootstrap, Component, provide} from "angular2/angular2";
 import {RouteConfig, ROUTER_PROVIDERS, LocationStrategy, HashLocationStrategy} from "angular2/router";
 import {Tabs, Tab} from "./components/tabs/tabs"
+import {Stabs, Stab} from "./components/stabs/stabs"
 
 @Component({
 	template: `
@@ -18,13 +19,8 @@ class Tab2 {}
 
 @Component({
 	selector: 'my-app',
-	template: `
-		<tabs>
-			<tab tab-title="Tab 1" path="/Tab1" />
-			<tab tab-title="Tab 2" path="/Tab2" />
-		</tabs>
-	`,
-	directives: [Tabs, Tab]
+	templateUrl: 'app/app.html',
+	directives: [Tabs, Tab, Stabs, Stab]
 })
 
 @RouteConfig([
