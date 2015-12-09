@@ -41,7 +41,9 @@ var Tab = (function () {
         tabs.addTab(this);
     }
     Tab.prototype.onInit = function () {
-        this.active = this._requestPath === this.path;
+        if (this._requestPath !== "") {
+            this.active = this._requestPath === this.path;
+        }
     };
     Tab = __decorate([
         angular2_1.Directive({

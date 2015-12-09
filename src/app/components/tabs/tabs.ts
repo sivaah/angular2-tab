@@ -48,6 +48,9 @@ export class Tab {
 	}
 	
 	onInit() {
-		this.active = this._requestPath === this.path;	
+		if(this._requestPath !== "") {
+			this.active = this._requestPath === this.path;				
+		}
+
 	}
 }
