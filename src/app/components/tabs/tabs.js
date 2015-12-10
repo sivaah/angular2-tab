@@ -10,7 +10,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var angular2_1 = require("angular2/angular2");
 var router_1 = require("angular2/router");
 var Tabs = (function () {
-    function Tabs(location) {
+    function Tabs(location, router) {
+        this.router = router;
         this.tabs = [];
         this.path = location.path();
     }
@@ -23,13 +24,17 @@ var Tabs = (function () {
         this.tabs.forEach(function (tab) { return tab.active = false; });
         tab.active = true;
     };
+    Tabs.prototype.selectTabByPath = function (path) {
+        this.tabs.forEach(function (tab) { return tab.active = tab.path === path; });
+        this.router.navigateByUrl(path);
+    };
     Tabs = __decorate([
         angular2_1.Component({
             selector: 'tabs',
             templateUrl: 'app/components/tabs/tabs.html',
             directives: [angular2_1.NgFor, router_1.RouterLink, router_1.RouterOutlet]
         }), 
-        __metadata('design:paramtypes', [router_1.Location])
+        __metadata('design:paramtypes', [router_1.Location, router_1.Router])
     ], Tabs);
     return Tabs;
 })();

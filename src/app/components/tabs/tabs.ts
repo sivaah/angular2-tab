@@ -1,5 +1,5 @@
 import {Component, Directive, NgFor} from "angular2/angular2";
-import {RouterOutlet, RouterLink, Location} from "angular2/router";
+import {RouterOutlet, RouterLink, Location, Router} from "angular2/router";
 
 @Component({
 	selector: 'tabs',
@@ -11,7 +11,7 @@ export class Tabs {
 	tabs: Tab[];
 	path: string;
 	
-	constructor(location: Location) {
+	constructor(location: Location, private router: Router) {
 		this.tabs = [];
 		this.path = location.path();	
 	}
@@ -21,10 +21,15 @@ export class Tabs {
 		this.tabs.push(tab);
 	}
 	
-	selectTab(tab: Tab) {
+	private selectTab(tab: Tab) {
 		this.path = "";
 		this.tabs.forEach((tab) => tab.active = false);
 		tab.active = true;
+	}
+	
+	selectTabByPath(path) {
+		this.tabs.forEach((tab) => tab.active = tab.path === path);
+		this.router.navigateByUrl(path);	
 	}		
 }
 
