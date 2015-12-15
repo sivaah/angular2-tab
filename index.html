@@ -24,6 +24,9 @@
 
 <p>Angular 2 Tab directive using Router and bootstrap CSS</p>
 
+<p>Based on Angular2 Quickstart
+<a href="https://angular.io/docs/ts/latest/quickstart.html">https://angular.io/docs/ts/latest/quickstart.html</a></p>
+
 <h2>
 <a id="prerequisites" class="anchor" href="#prerequisites" aria-hidden="true"><span class="octicon octicon-link"></span></a>Prerequisites</h2>
 
@@ -33,8 +36,8 @@
 <a id="dependent-npm-modules" class="anchor" href="#dependent-npm-modules" aria-hidden="true"><span class="octicon octicon-link"></span></a>Dependent npm modules</h2>
 
 <ol>
-<li>angular2  &gt;= 2.0.0-alpha.44</li>
-<li>systemjs &gt;= 0.19.2</li>
+<li>angular2 2.0.0-alpha.53</li>
+<li>systemjs 0.19.6</li>
 <li>bootstrap</li>
 </ol>
 
@@ -43,16 +46,41 @@
 
 <p>Download the files and from the root run</p>
 
-<p><code>
-npm install
-</code></p>
+<pre><code>npm install
+
+npm run lite
+</code></pre>
 
 <h2>
 <a id="usage" class="anchor" href="#usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Usage</h2>
 
-<p><code>
-npm start
-</code></p>
+<ol>
+<li>Copy the component to your project components directory.</li>
+<li>Import the directives to your component.</li>
+<li>Use the directives in your component view to create tabs.</li>
+</ol>
+
+<h3>
+<a id="tab-using-router" class="anchor" href="#tab-using-router" aria-hidden="true"><span class="octicon octicon-link"></span></a>Tab using Router</h3>
+
+<pre><code>&lt;tabs&gt;
+    &lt;tab tab-title="Tab 1" path="/Tab1"&gt;&lt;/tab&gt;
+    &lt;tab tab-title="Tab 2" path="/Tab2"&gt;&lt;/tab&gt;
+&lt;/tabs&gt;
+</code></pre>
+
+<h3>
+<a id="static-tab" class="anchor" href="#static-tab" aria-hidden="true"><span class="octicon octicon-link"></span></a>Static Tab</h3>
+
+<pre><code>&lt;stabs&gt;
+    &lt;stab tab-title="Tab 1"&gt;
+        Static Tab 1 content goes here
+    &lt;/stab&gt;
+    &lt;stab tab-title="Tab 2"&gt;
+        Static Tab 2 content goes here
+    &lt;/stab&gt;
+&lt;/stabs&gt;
+</code></pre>
 
 <h2>
 <a id="features" class="anchor" href="#features" aria-hidden="true"><span class="octicon octicon-link"></span></a>Features</h2>
