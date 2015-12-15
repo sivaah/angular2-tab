@@ -1,4 +1,5 @@
-import {Component, Directive, NgFor} from "angular2/angular2";
+import {Component, Directive, OnInit} from "angular2/core";
+import {NgFor} from "angular2/common"
 import {RouterOutlet, RouterLink, Location, Router} from "angular2/router";
 
 @Component({
@@ -42,7 +43,7 @@ export class Tabs {
 	]
 })
 
-export class Tab {
+export class Tab implements OnInit {
 	active = this.active || false;
 	path: string;
 	private _requestPath: string;
@@ -52,7 +53,7 @@ export class Tab {
 		tabs.addTab(this);	
 	}
 	
-	onInit() {
+	ngOnInit() {
 		if(this._requestPath !== "") {
 			this.active = this._requestPath === this.path;				
 		}
