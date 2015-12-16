@@ -8,7 +8,7 @@ https://angular.io/docs/ts/latest/quickstart.html
 The generated project has dependencies that require Node 4 or greater.
 
 ##Dependent npm modules
-1. angular2 2.0.0-alpha.53
+1. angular2 2.0.0-beta.0
 2. systemjs 0.19.6
 3. bootstrap
 

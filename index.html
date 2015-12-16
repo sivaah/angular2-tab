@@ -2,7 +2,9 @@
 <html>
   <head>
     <title>Angular 2 Tab Directive</title>
+    <script src="node_modules/angular2/bundles/angular2-polyfills.js"></script>
     <script src="node_modules/systemjs/dist/system.src.js"></script>
+    <script src="node_modules/rxjs/bundles/Rx.js"></script>
     <script src="node_modules/angular2/bundles/angular2.dev.js"></script>
     <script src="node_modules/angular2/bundles/router.dev.js"></script>
     <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
@@ -10,7 +12,8 @@
       System.config({
         packages: {'app': {defaultExtension: 'js'}}
       });
-      System.import('app/app');
+      System.import('app/app')
+         .then(null, console.error.bind(console));
     </script>
     <style>
       body, div.tab-content {
